@@ -1,0 +1,40 @@
+<div class="rounded-2xl bg-primary-200 overflow-hidden">
+  <div class="p-4 space-y-3">
+    <%# Icons at top %>
+    <div class="flex items-center justify-between">
+      <div class="rounded-full bg-white p-2 inline-block">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+        </svg>
+      </div>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM18.75 12a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+      </svg>
+    </div>
+    <%# Text %>
+    <div class="space-y-1">
+      <h3 class="text-primary-700">Images</h3>
+      <p class='text-xl font-medium'>1250 files</p>
+    </div>
+    <%# Progress %>
+    <div class="space-y-1">
+      <div class="h-2 rounded-full bg-white">
+        <%# colored bit in progress %>
+        <div class="bg-primary-500 h-full rounded-full w-1/2"></div>
+      </div>
+      <div class="flex items-center justify-between text-xs text-gray-500">
+        <p>32.5GB</p>
+        <p>65GB</p>
+      </div>
+    </div>
+  </div>
+  <%# CTA %>
+  <%= link_to "#", class: "border-t border-primary-300 p-4 flex items-center justify-between bg-primary-100 hover:bg-primary-600 hover:text-white transition duration-300 ease-in-out" do %>
+    <span class="tracking-wide text-sm font-medium">VIEW</span>
+    <div class="bg-transparent rounded-full p-1 hover:bg-white hover:text-gray-900 transition ease-in-out transform scale-100 hover:scale-110 active:scale-100">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+      </svg>
+    </div>
+  <% end %>
+</div>
