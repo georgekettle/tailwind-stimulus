@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+100.times do
+  city = Faker::Address.city
+  image_url = "https://source.unsplash.com/random/1920x1080/?#{city}"
+  Photo.create!(url: image_url, location: city, caption: Faker::Lorem.sentence(word_count: 3))
+end

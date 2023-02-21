@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
+  resources :boards
+  resources :photos do
+    resources :pins, only: [:create]
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "pages#home"
+  root "photos#index"
 end
