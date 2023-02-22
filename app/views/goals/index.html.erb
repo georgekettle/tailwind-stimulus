@@ -1,0 +1,20 @@
+<%= turbo_stream_from "todos" %>
+
+<div class="container mx-auto sm:px-6 lg:px-8 py-10">
+  <!-- Content goes here -->
+  <div class="md:flex md:items-center md:justify-between mb-10">
+    <div class="min-w-0 flex-1">
+      <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">Dashboard</h2>
+    </div>
+    <div class="mt-4 flex md:mt-0 md:ml-4">
+      <%= link_to 'New goal', new_goal_path, class: "rounded-lg py-3 px-5 bg-violet-600 text-white block font-medium" %>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <%# List all the goals in columns %>
+    <% @goals.each do |goal| %>
+      <%# List all todos under each goal %>
+      <%= render 'goals/goal', goal: goal %>
+    <% end %>
+  </div>
+</div>

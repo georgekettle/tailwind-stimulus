@@ -1,0 +1,4 @@
+<%# https://github.com/hotwired/turbo-rails/blob/main/app/models/turbo/streams/tag_builder.rb %>
+
+<%= turbo_stream.replace dom_id(@todo), partial: "todos/todo", locals: { todo: @todo } %>
+<%= turbo_stream.replace dom_id(@todo.goal, :completed_counter), partial: 'goals/todo_counter', locals: { goal: @todo.goal } %>

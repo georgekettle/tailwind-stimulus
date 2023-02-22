@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_21_062945) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_22_062220) do
   create_table "boards", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "goals", force: :cascade do |t|
+    t.string "name"
+    t.string "emoji"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -34,6 +41,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_21_062945) do
     t.index ["photo_id"], name: "index_pins_on_photo_id"
   end
 
+  create_table "todos", force: :cascade do |t|
+    t.string "name"
+    t.boolean "done", default: false
+    t.integer "goal_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["goal_id"], name: "index_todos_on_goal_id"
+  end
+
   add_foreign_key "pins", "boards"
   add_foreign_key "pins", "photos"
+  add_foreign_key "todos", "goals"
 end
